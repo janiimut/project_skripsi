@@ -40,15 +40,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.penyakit')}}" class="nav-link">
+                <a href="{{ route('admin.edit')}}" class="nav-link">
                     <i class="nav-icon far fa-image"></i>
                     <p>
-                      Edit Berita
+                      Edit
                     </p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('admin.penyakit')}}" class="nav-link">
+                  <a href="{{ route('password.request') }}" class="nav-link">
                       <i class="nav-icon far fa-image"></i>
                       <p>
                        Ubah Password

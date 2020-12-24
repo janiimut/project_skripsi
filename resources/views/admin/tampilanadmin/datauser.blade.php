@@ -8,15 +8,12 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-      <a href="inputpenyakit" class="btn btn-primary btn-sm" >
-        Input Penyakit
-      </a>
       <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
           <th>No</th>
-          <th>Nama Penyakit</th>
-          <th>Lihat</th>
+          <th>Nama User</th>
+
 
         </tr>
         </thead>

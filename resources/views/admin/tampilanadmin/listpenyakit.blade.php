@@ -24,8 +24,6 @@
         <tr>
           <th>No</th>
           <th>Nama Penyakit</th>
-          <th>Lihat</th>
-          <th>Proses</th>
 
         </tr>
         </thead>
@@ -34,21 +32,6 @@
         <tr>
             <td>{{ $penyakit->id }}</td>
             <td>{{ $penyakit->name}}</td>
-            <td>
-            <a href="penyakit/{{$penyakit->id}}" class="btn btn-primary btn-sm" >
-                Ciri-ciri penyakit
-              </a>
-                <a href="solusipenyakit/{{$penyakit->id}}" class="btn btn-primary btn-lg active btn-sm" >Solusi Penyakit</a>
-            </td>
-            <td>
-              <a href="edit/penyakit/{{$penyakit->id}}"><i class="fas fa-edit fa-1x text-warning"></i></a>/
-              <button href="{{ route('admin.delete', $penyakit->id)}}" id="delete"><i class="fas fa-trash fa-1x text-danger"></i></button>
-              <form action="" method="post" id="deleteForm">
-                @csrf
-                @method("DELETE")
-                <input type="submit" value="Hapus" class="btn btn-danger" style="display: none">
-              </form>
-            </td>
         </tr>
         
         @endforeach

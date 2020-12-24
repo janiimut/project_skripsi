@@ -41,6 +41,11 @@
 <script src="{{ asset ('assets/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
 <script src="{{ asset ('assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 
+<!-- OPTIONAL SCRIPTS -->
+<script src="{{ asset ('assets/plugins/chart.js/Chart.min.js')}}"></script>
+<script src="{{ asset ('assets/dist/js/demo.js')}}"></script>
+<script src="{{ asset ('assets/dist/js/pages/dashboard3.js')}}"></script>
+
 <!-- Icon -->
 <script src="https://kit.fontawesome.com/11e8b03e9c.js" crossorigin="anonymous"></script>
 
@@ -74,3 +79,13 @@
     $('#compose-textarea2').summernote()
   })
 </script>
+
+<!-- Sweet Alert  2-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="dist/js/demo.js"></script>
+<script src="dist/js/pages/dashboard3.js"></script>
+
+@stack('script')

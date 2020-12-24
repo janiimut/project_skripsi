@@ -23,24 +23,80 @@ class PenyakitController extends Controller
  
         $penyakits = DB::table('penyakit')->get();
 
-        return view('admin.tampilanadmin.datapenyakit', compact('penyakits'));
+        return view('admin.tampilanadmin.listpenyakit', compact('penyakits'));
+    }
+
+    public function editpenyakit()
+    {
+         $penyakits = DB::table('penyakit')->get();
+
+         return view('admin.tampilanadmin.datapenyakit', compact('penyakits'));
     }
     
     public function ciri($penyakit)
     {
-        $ciri= CiriPenyakit::where([
-            ['penyakit_id', 'LIKE', '%' . $penyakit . '%'],
+        $ciri= Penyakit::where([
+            ['id', 'LIKE', '%' . $penyakit . '%'],
         ])->first();
+
         return view('admin.tampilanadmin.ciripenyakit', compact('ciri'));
+    }
+    public function ciriupdate(Request $request, $penyakit )
+    {
+        dd($penyakit);
+        DB::table('ciripenyakit')->where('id', $penyakit)
+        ->update([
+            'penyakit_id' => $request->penyakit_id,
+            'description' => $request->ciri
+        ]);
+        return 'oke';
+    }
+
+    public function editciri($ciri)
+    {
+        $data = Penyakit::where([
+            ['id', 'LIKE', '%' . $ciri . '%'],
+        ])->first();
+        return view ('admin.tampilanadmin.editciri', compact('data'));
+    }
+
+    public function updateciri(Request $request, Penyakit $ciri)
+    {
+        Penyakit::where('id', $ciri->id)
+        ->update([
+            'name' => $request->name,
+            'ciri_penyakit' => $request->ciri_penyakit,
+            'solusi_penyakit' => $request->solusi_penyakit,
+        ]);
+        return redirect()->route('admin.penyakit');
     }
 
 
     public function solusi($penyakit)
     {
-        $solusi = SolusiPenyakit::where([
-            ['penyakit_id', 'LIKE', '%' . $penyakit . '%'],
+        $solusi = Penyakit::where([
+            ['id', 'LIKE', '%' . $penyakit . '%'],
         ])->first();
         return view('admin.tampilanadmin.solusipenyakit', compact('solusi'));
+    }
+
+    public function editsolusi($solusi)
+    {
+        $data = Penyakit::where([
+            ['id', 'LIKE', '%' . $solusi . '%'],
+        ])->first();
+        return view('admin.tampilanadmin.editsolusi', compact('data'));
+    }
+
+    public function solusiupdate(Request $request, Penyakit $solusi)
+    {
+        Penyakit::where('id', $solusi->id)
+        ->update([
+            'name' => $request->name,
+            'ciri_penyakit' => $request->ciri_penyakit,
+            'solusi_penyakit' => $request->solusi_penyakit,
+        ]);
+        return redirect()->route('admin.penyakit');
     }
 
     public function input()
@@ -91,5 +147,14 @@ class PenyakitController extends Controller
             ]);
 
         return redirect()->route('admin.penyakit')->with('status', 'Data berhasil diedit');
+    }
+
+    public function destroy($id)
+    {
+        $data = Penyakit::find($id);
+
+        $data->delete();
+
+        return redirect()->back();
     }
 }
