@@ -12,7 +12,6 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-    
   </div>
 
 
@@ -31,21 +30,34 @@
       </div>
     </div>
     
-    <div class="row mb-2 ">
-      <div class="col-lg-6 my-4">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="{{asset('img/383060387.jpg')}}" alt="Card image cap">
+    <div class="row">
+      @foreach ($penyakit as $data)
+          
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <center><h5 class="card-title">{{$data->name}}</h5></center>
+          <a href="#">
+              <img src="{{asset('img/' . $data->images)}}" class="bd-placeholder-img card-img-top" width="450" height="200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+          </a>
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Ciri-ciri Penyakit</h5>
+              <p class="card-text">{!! Str::limit($data->ciri_penyakit, 100) !!}</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+            </div>
           </div>
         </div>
       </div>
+      @endforeach
 
-    </div>
-        
-
+    </div> <!-- /.row -->
+    <nav aria-label="Page navigation example">
+      {{ $penyakit->links('vendor\pagination\pagination') }}
+      
+    </nav>
+    
   </div>
 
   <!-- FOOTER -->

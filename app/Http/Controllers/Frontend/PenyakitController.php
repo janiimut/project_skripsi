@@ -10,7 +10,7 @@ class PenyakitController extends Controller
 {
     public function index()
     {
-        $penyakit = Penyakit::get();
+        $penyakit = Penyakit::paginate(10);
         return view('user.home', compact('penyakit'));
     }
 }
