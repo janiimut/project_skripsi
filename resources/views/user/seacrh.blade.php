@@ -52,11 +52,7 @@
       </div>
       @endforeach
 
-    </div> <!-- /.row -->
-    <nav aria-label="Page navigation example">
-      {{ $penyakit->links('vendor\pagination\pagination') }}
-      
-    </nav>
+    </div>
     
   </div>
 
