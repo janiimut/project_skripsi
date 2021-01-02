@@ -22,3 +22,5 @@ Auth::routes(['verify' => true]);
 Route::get('/home', 'Frontend\PenyakitController@index')->name('home')->middleware('verified');
 Route::get('/home/cari', 'Frontend\PenyakitController@cari')->name('cari');
 
+Route::get('home/detail/{data}', 'Frontend\PenyakitController@detail')->name('detail');
+

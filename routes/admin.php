@@ -24,3 +24,4 @@ Route::get('edit/penyakit/{penyakit}', 'PenyakitController@edit')->name('edit.pe
 Route::patch('edit/penyakit/{penyakit}', 'PenyakitController@patch')->name('edit.patch');
 
 Route::delete('delete/{penyakit}', 'PenyakitController@destroy')->name('delete');
+

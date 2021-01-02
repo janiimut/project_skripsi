@@ -16,7 +16,7 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
         </ul>
-        <form method="get" accept="{{url('/home/cari')}}" class="form-inline mt-2 mt-md-0">
+        <form method="get" action="{{url('/home/cari')}}" class="form-inline mt-2 mt-md-0">
             @csrf
             <input name="cari" class="form-control mr-sm-2" type="search" placeholder="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

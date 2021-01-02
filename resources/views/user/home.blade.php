@@ -22,11 +22,10 @@
   <div class="container marketing">
     <div class="nav-scroller">
     </div><!-- /.container -->
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" >
       <div class="col-md-6 px-0">
-        <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-        <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+        <h1 class="display-4 font-italic">Sistem Pakar Penyakit Pada Tanaman Padi</h1>
+        <img src="{{asset('img/sawah.jpg')}}" width="1009" height="420" alt="">
       </div>
     </div>
     
@@ -45,7 +44,7 @@
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Detail</button>
+              <a href="home/detail/{{$data->id}}" class="btn btn-sm btn-outline-secondary">Detail</a>
             </div>
           </div>
         </div>
