@@ -30,9 +30,11 @@
         </tr>
         </thead>
         <tbody>
+          <?php $i = 0; ?>
             @foreach ($penyakits as $penyakit)
+            <?php $i++; ?>
         <tr>
-            <td>{{ $penyakit->id }}</td>
+            <td>{{$i}}</td>
             <td>{{ $penyakit->name}}</td>
             <td>
             <a href="penyakit/{{$penyakit->id}}" class="btn btn-primary btn-sm" >
