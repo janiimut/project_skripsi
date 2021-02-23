@@ -32,6 +32,9 @@
                     <h4>Solusi Penyakit</h4>
                 </textarea>
             </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="informasi" id="informasi" placeholder="Informasi">
+            </div>
           </div>
           <!-- /.card-body -->
           <!-- /.card-footer -->

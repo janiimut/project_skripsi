@@ -122,6 +122,7 @@ class PenyakitController extends Controller
 
         $data->ciri_penyakit = $request->ciri;
         $data->solusi_penyakit = $request->solusi; 
+        $data->informasi = $request->informasi;
 
         $data->save();
 
@@ -156,5 +157,16 @@ class PenyakitController extends Controller
         $data->delete();
 
         return redirect()->back();
+    }
+
+    public function informasi($penyakit)
+    { 
+        // $data = DB::table('penyakit')->get();
+        $data = Penyakit::where([
+            ['id', 'LIKE', '%' . $penyakit . '%'],
+        ])->first();
+        // return view('admin.tampilanadmin.solusipenyakit', compact('solusi'));
+        // dd ($data);
+        return view ('admin.tampilanadmin.informasi',compact('data'));
     }
 }

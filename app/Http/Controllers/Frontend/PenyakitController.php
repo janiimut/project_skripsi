@@ -52,7 +52,7 @@ class PenyakitController extends Controller
         }
         
         
-        // mengirim penyakit pegawai ke view index
+        // mengirim penyakit ke view index
         return view('user.seacrh')->with(['penyakit' => $result]);
         // var_dump($result);
     }

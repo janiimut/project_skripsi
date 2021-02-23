@@ -28,9 +28,11 @@
         </tr>
         </thead>
         <tbody>
+          <?php $i = 0; ?>
             @foreach ($penyakits as $penyakit)
+            <?php $i++; ?>
         <tr>
-            <td>{{ $penyakit->id }}</td>
+            <td>{{$i}}</td>
             <td>{{ $penyakit->name}}</td>
         </tr>
         

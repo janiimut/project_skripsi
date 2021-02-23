@@ -13,6 +13,7 @@ Route::get('edit/ciri/{ciri}', 'PenyakitController@editciri')->name('editciri');
 Route::patch('edit/ciri/{ciri}', 'PenyakitController@updateciri')->name('update');
 
 Route::get('/penyakit/{penyakit}', 'PenyakitController@ciri')->name('ciripenyakit');
+Route::get('/informasi/{penyakit}', 'PenyakitController@informasi')->name('informasi');
 
 Route::get('/inputpenyakit','PenyakitController@input');
 

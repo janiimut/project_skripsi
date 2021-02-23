@@ -37,6 +37,9 @@
             <td>{{$i}}</td>
             <td>{{ $penyakit->name}}</td>
             <td>
+            <a href="informasi/{{$penyakit->id}}" class="btn btn-success btn-sm" >
+                Informasi
+              </a>
             <a href="penyakit/{{$penyakit->id}}" class="btn btn-primary btn-sm" >
                 Ciri-ciri penyakit
               </a>
